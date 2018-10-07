@@ -1,0 +1,46 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Player here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Player extends Actor
+{
+    private int moveSpeed;  // Speed for the player to move
+    static int playerScore;
+    
+    
+    public Player(int playerSpeed)  //R4
+    {
+        moveSpeed = playerSpeed;
+        playerScore = 0;    // Default the player's score to zero at the start of the game
+    }
+    
+    /**
+     * Act - do whatever the Player wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        playerControls();
+    }    
+    
+     /**
+     * Handlers for left and right arrow keys.
+     * Movement speed is predefined.
+     */
+    private void playerControls()
+    {
+        if (Greenfoot.isKeyDown("left"))
+        {
+            move(-moveSpeed);
+        }
+        
+        if (Greenfoot.isKeyDown("right"))
+        {
+            move(moveSpeed);
+        }
+    }
+}
